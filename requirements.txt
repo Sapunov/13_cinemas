@@ -1,3 +1,4 @@
 bs4==0.0.1
 msgpack-python==0.4.8
 requests==2.9.1
+-e git+https://github.com/Sapunov/cacher.git#egg=cacher

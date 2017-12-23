@@ -185,9 +185,14 @@ def console_output(movies, count, most_cinemas, take_votes):
     count = count if count != 0 else len(movies)
 
     for i, movie in enumerate(movies[:count]):
+        movie_name = movie["name"]
+
+        if len(movie_name) > 48:
+            movie_name = "{}...".format(movie_name[:45])
+
         print(format_str.format(
             i + 1,
-            (movie["name"] + " ").ljust(48, "."),
+            ("{} ".format(movie_name)).ljust(48, "."),
             round(movie["rate"], 3),
             movie["votes"],
             movie["cinemas_count"]))
